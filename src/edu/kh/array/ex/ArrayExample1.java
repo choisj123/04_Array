@@ -1,5 +1,6 @@
 package edu.kh.array.ex;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayExample1 {
@@ -147,8 +148,7 @@ public class ArrayExample1 {
 			System.out.print((i+1) + "번 점수 입력: ");
 			score[i] = sc.nextInt();
 			
-			sum += score[i];
-		
+			sum += score[i];		
 		}
 			
 		int max = score[0];	
@@ -168,6 +168,103 @@ public class ArrayExample1 {
 		System.out.println("최저점: " + min);
 	}	
 		
+	public void ex5() {
+		//배열 선언과 동시에 초기화
+		char[] arr = new char[5];
+		
+		// char[] arr이 참조하는 배열 요소에 A,B,C,D,E 대입하기
+		
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = (char)('A' + i);
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+		
+		// *Arrays 클래스
+		// --> Java에서 제공하는 배열과 관련된 기능을 모아둔 클래스
+		
+		int[] arr2 = new int[4];
+		
+		// Arrays.toString(배열명) : 모든 요소 값 출력
+		System.out.println(Arrays.toString(arr));
+		System.out.println(Arrays.toString(arr2)); //int 기본값 = 0
+	
+		//배열 선언과 동시에 초기화
+		char[] arr3 = {'A', 'B', 'C', 'D', 'E'};
+		
+		//char[] 참조 변수 arr3을 선언하고
+		//Heap 영역에 char 5칸짜리 char[]을 생성하고
+		//각각 'A', 'B', 'C', 'D', 'E'로 초기화 후 주소를 arr3에 대입
+		
+		System.out.println(Arrays.toString(arr3));
+		
+		
+	}
+
+	public void ex6() {
+		// 배열을 이용한 검색
+		
+		// 입력받은 정수가 배열에 있는지 없는지 확인
+		// 만약 있다면 몇번 인덱스에 존재하는지 출력
+		
+		int[] arr = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력: ");
+		int input = sc.nextInt();
+		
+		// 신호를 나타내기 위한 변수
+		// flag == false: 일치하는 값이 존재하지 않음
+		// flag == true: 일치하는 값이 존재
+		
+		boolean flag = false; // 검사 전에는 없다고 가정
+		
+		// arr 배열 요소 순차 접근
+		for(int i = 0; i < arr.length; i++) {
+			if (arr[i] == input) {
+				System.out.println(i + "번째 인덱스에 존재합니다.");
+				
+				flag = true; // 일치하는 값이 있으므로 true로 변경
+			}
+		}
+
+		// flag 상태를 검사
+		if (!flag) { // flag
+			System.out.println("존재하지 않습니다.");
+		}
+		
+		
+		
+	}
+
+	public void ex7() {
+		//입력 받은 값과 일치하는 값이 있으면 인덱스 번호 출력
+		//없으면 "존재하지 않음"
+		String[] arr = {"사과", "딸기", "바나나", "키위", "멜론", "아보카도"};
+		//equals() == > 배열명[i], equals(비교할 값)
+		
+		//String은 arr{i} == input X -->equals 사용
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("과일 입력: ");
+		String input = sc.next();
+		
+		boolean flag = false;
+		
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i].equals(input)) {
+				System.out.println(i + "번째 인덱스에 존재합니다.");
+				flag = true;
+			}
+			System.out.println("test::" + arr[i] == input);
+		}
+		
+		if (!flag) {
+			System.out.println("값이 존재하지 않습니다.");
+		}
+	}
+
 }		
 				
 					
