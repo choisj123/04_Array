@@ -265,6 +265,59 @@ public class ArrayExample1 {
 		}
 	}
 
+	public void ex8() {
+		// 1. 믄자열을 입력 받아 한 글자씩 잘라내어 char 배열에 순서대로 저장
+		//	2. 문자 하나를 입력 받아 일치하는 문자가 char 배열에 몇개 존재하는지 확인
+		//	3. 단, 일치하는 문자가 없을 경우 "존재하지 않습니다" 출력
+		// [사용 해야 하는 기술, 기능]
+		// 1) 배열 검색
+		// 2) String.length() : 문자열의 길이
+		// 	  ex) "Hello".length() -> 4
+		// 3) String.charAt(index) : 문자열에서 특정 index에 위치한 문자 하나를 엍어옴
+		// 	  ex) "Hello".charAt(1) -> 'e'
+		// 	       01234
+		// 4) count 숫자 세기
+		// 문자열 입력:
+		// 검색할 문자열 입력:
+		// 2개 있음
+		
+		 Scanner sc = new Scanner(System.in);
+		 System.out.print("문자열 입력: ");
+		 String input = sc.nextLine();
+		 
+		 // 1. 믄자열을 입력 받아 한 글자씩 잘라내어 char 배열에 순서대로 저장
+		 char arr[] = new char[input.length()]; //공간 생성
+		 
+		 for(int i = 0; i < arr.length; i++ ) {
+			 arr[i] = input.charAt(i);
+		 }
+		 //System.out.println(Arrays.toString(arr)); //확인용
+		 
+         //2. 문자 하나를 입력 받아 일치하는 문자가 char 배열에 몇개 존재하는지 확인
+		 System.out.print("검색할 문자열 입력: ");
+		 char ch = sc.nextLine().charAt(0);
+		 					//String.charAt(0): 문자열 제일 앞 문자
+		 
+		 int count = 0; // 같은 글자 개수 세기 위한 변수
+		 
+		 for(int i = 0; i < arr.length; i++) {
+			 if (arr[i] == ch) {
+				 count++;
+			 }
+		 }
+		 
+		 // 결과 출력
+		 if(count >0) {
+			 System.out.println(count + "개 있음");
+		 }else {
+			 System.out.println("존재하지 않음");
+		 }	 
+		
+	}
+
+
+
+
 }		
 				
 					
