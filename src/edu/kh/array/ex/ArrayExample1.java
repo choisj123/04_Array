@@ -74,13 +74,13 @@ public class ArrayExample1 {
 		// 3) 생성된 int[]의 주소를 arr에 대입하여 참조하는 형태를 만듦
 		
 		// 배열 길이(몇 칸인가): 배열명.length
-		// Index 4 out of bounds for length 4
 		System.out.println("배열 길이: " + arr.length);
 		arr[0] = 100;
 		arr[1] = 300;
 		arr[2] = 500;
 		arr[3] = 1000;
 		//arr[4] = 1500;
+		// Index 4 out of bounds for length 4
 		
 		for (int i = 0; i < arr.length; i++) {
 			// 0 1 2 3
@@ -110,6 +110,7 @@ public class ArrayExample1 {
 		System.out.println();
 		
 		double sum = 0; //합계용 변수
+		System.out.print("입력받은 키: ");
 		for(int i = 0; i < height.length; i++) {
 			System.out.print(height[i] + " ");
 			
@@ -161,9 +162,9 @@ public class ArrayExample1 {
 				min = score[i];
 			}
 		}
-			
+		System.out.println();	
 		System.out.println("합계: " + sum);
-		System.out.printf("평균: %.2f\n" , (double) sum / score.length);
+		System.out.printf("평균: %.1f\n" , (double) sum / score.length);
 		System.out.println("최고점: " + max);
 		System.out.println("최저점: " + min);
 	}	
@@ -228,7 +229,6 @@ public class ArrayExample1 {
 				flag = true; // 일치하는 값이 있으므로 true로 변경
 			}
 		}
-
 		// flag 상태를 검사
 		if (!flag) { // flag
 			System.out.println("존재하지 않습니다.");
@@ -242,7 +242,7 @@ public class ArrayExample1 {
 		//입력 받은 값과 일치하는 값이 있으면 인덱스 번호 출력
 		//없으면 "존재하지 않음"
 		String[] arr = {"사과", "딸기", "바나나", "키위", "멜론", "아보카도"};
-		//equals() == > 배열명[i], equals(비교할 값)
+		//equals() == > 배열명[i].equals(비교할 값)
 		
 		//String은 arr{i} == input X -->equals 사용
 		Scanner sc = new Scanner(System.in);
@@ -254,10 +254,11 @@ public class ArrayExample1 {
 		
 		for (int i = 0; i < arr.length; i++) {
 			if(arr[i].equals(input)) {
+			//if(input.equals(arr[i])) {
 				System.out.println(i + "번째 인덱스에 존재합니다.");
 				flag = true;
 			}
-			System.out.println("test::" + arr[i] == input);
+			//System.out.println("test::" + arr[i] == input);
 		}
 		
 		if (!flag) {

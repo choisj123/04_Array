@@ -4,23 +4,23 @@ public class ArrayRun {
 
 	public static void main(String[] args) {
 		
-		ArrayExample1 ArryEx = new ArrayExample1();
+		ArrayExample1 ArrayEx = new ArrayExample1();
 		
 		
-		ArryEx.ex1();
-		//ArryEx.ex2();
-		//ArryEx.ex3();
-		//ArryEx.ex4();
-		//ArryEx.ex5();
-		//ArryEx.ex6();
-		//ArryEx.ex7();
-		//ArryEx.ex8();
+		//ArrayEx.ex1();
+		//ArrayEx.ex2();
+		//ArrayEx.ex3();
+		//ArrayEx.ex4();
+		//ArrayEx.ex5();
+		//ArrayEx.ex6();
+		//ArrayEx.ex7();
+		//ArrayEx.ex8();
 		
-		ArrayExample2 ArryEx2 = new ArrayExample2();
+		ArrayExample2 ArrayEx2 = new ArrayExample2();
 		
-		//ArryEx2.shallowCopy();
-		//ArryEx2.deepCopy();
-		//ArryEx2.createLottoNumner();
+		//ArrayEx2.shallowCopy();
+		//ArrayEx2.deepCopy();
+		ArrayEx2.createLottoNumner();
 	}
 
 }
