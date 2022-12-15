@@ -37,14 +37,15 @@ public class PracticeService {
 		
 							//9				
 		for(int i = 0; i < arr.length; i++) {
-				arr[i] =arr.length - i; 
+				arr[i] = arr.length - i; 
+				System.out.print(arr[i] + " ");
 			
-			if (i % 2 == 1) {
+				if (i % 2 == 1) {
 				sum += arr[i];
 			}		
 		}
-		System.out.println(Arrays.toString(arr));
-		System.out.println("홀수 번째 인덱스 합: " + sum);
+		//System.out.println(Arrays.toString(arr));
+		System.out.println("\n홀수 번째 인덱스 합: " + sum);
 	
 		
 		
@@ -66,6 +67,7 @@ public class PracticeService {
 	}
 
 	public void practice4() {
+		
 		int arr[] = new int[5];
 		
 		Scanner sc = new Scanner(System.in);
@@ -122,33 +124,17 @@ public class PracticeService {
 		
 		int count = 0;
 		
-		
-		
+		System.out.print(input + "에 " + ch + "가 존재하는 위치(인덱스): ");
 		
 		for (int i = 0; i < arr.length; i++) {
 			if(arr[i] == ch) {
-				count++;
-				System.out.println(input + "에 " + ch + "가 존재하는 위치(인덱스): " + i);
-			}
-			int index[] = new int[count + 1];
-			if(arr[i] == ch) {
-				index[i] = i;
-				//System.out.println(index[i]);
+				System.out.print(i +" ");
 				
+				count++;
 			}
-			
 		}
-		
-		
-		//System.out.println(Arrays.toString(index));
-			
-		
-		
-		if(count > 0) {
-			System.out.println(ch + " 개수: " + count);
-		}
-		
-		
+		System.out.println();
+		System.out.println(ch + "개수: " + count);
 		
 		
 		
@@ -311,8 +297,98 @@ public class PracticeService {
 			[실행 화면]
 			4 1 3 6 9 5 8 10 7 2
 		 */
+		int arr[] = new int[10];
 		
-		
+		for (int i = 0; i < arr.length; i++) {
+			
+			arr[i]= (int)(Math.random() * 10 + 1);
+			
+			for(int x = 0; x < i; x++) {
+				if (arr[i] == arr[x]) {
+					i--;
+					break;
+				}
+			}
+	
+		}
+		for(int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}	
 	}
 
+	public void practice12() {
+		
+		int lotto[] = new int[6];
+		
+		for (int i = 0; i < lotto.length; i++) {
+			lotto[i] = (int)(Math.random() * 45 + 1);
+			
+			for (int x = 0; x < i; x++) {
+				if(lotto[i] == lotto[x]) {
+					i--;
+					break;
+				}		
+			}			
+		}
+		
+		for (int i = 0; i < lotto.length - 1; i++) {
+			for(int x = i + 1; x < lotto.length; x++) {
+				if(lotto[i] > lotto[x]) {
+					int temp = lotto[i];
+					lotto[i] = lotto[x];
+					lotto[x] = temp;
+				}
+			}
+		}
+		
+		for (int i = 0; i < lotto.length; i++) {
+			System.out.print(lotto[i] + " ");
+		}
+	}
+
+	public void practice13() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("문자열: ");
+		String str = sc.nextLine();
+		
+		char arr[] = new char[str.length()];
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = str.charAt(i);		
+		}
+		
+		int count = 0;
+		System.out.print("문자열에 있는 문자: ");
+		
+		for (int i = 0; i < arr.length; i++) {
+			
+			boolean flag = true;
+			
+			for (int x = 0; x < i; x++) {
+				if (arr[i] == arr[x]) {
+					flag = false;
+					break;
+				}
+			}
+			
+			if(flag) {
+				if(i == 0) {
+					System.out.print(arr[i]);
+				}else {
+					System.out.print(", " + arr[i]);
+				}
+				
+				count++;
+			}
+			
+		}
+		System.out.println();
+		System.out.println("문자 개수: " + count);
+	}
+
+	public void practice14() {
+		         
+	
+	}
 }
